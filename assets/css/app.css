@@ -25,7 +25,7 @@ form {
 
 form input,
 form button {
-    padding: 0.6rem;
+    padding: 1rem;
     font-size: 1rem;
     border: none;
     background: white;
@@ -39,7 +39,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #753682;
+    background-color: ;
     color: white;
 }
 
@@ -62,6 +62,8 @@ form button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 1s ease;
+    /* specifies the transition of the toggle cass"completed" */
 }
 
 .todo li {
@@ -87,4 +89,61 @@ form button:hover {
 .fa-trash,
 .fa-check {
     pointer-events: none;
+}
+
+
+/* style the toggle */
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(10rem) rotateZ(30deg);
+    opacity: 0;
+}
+
+
+/* Remove the select styles first */
+
+select {
+    -webkit-apppearnce: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: #753682;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+
+/* Add an arrow next to the select options */
+
+.select::after {
+    content: "\25BC";
+    /* CSS ENTITIES */
+    background: #bf2e34;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    transition: all 0.7s ease-in;
+}
+
+.select:hover::after {
+    color: #bf2e34;
+    background: white;
 }
