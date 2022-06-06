@@ -4,6 +4,7 @@ const todoButton = document.querySelector(".todo-Button");
 const todoList = document.querySelector(".do-list");
 // eventLsteners
 todoButton.addEventListener('click', addActivity);
+todoList.addEventisteners('click', delete)
 
 //functions
 function addActivity(event) {
@@ -17,8 +18,10 @@ function addActivity(event) {
     todoDiv.classList.add("todo");
     //Create a list
     const newtodoLi = document.createElement("li");
-    newtodoLi.innerText = "hello";
+    newtodoLi.innerText = todoInput.value;
     newtodoLi.classList.add("todo-Item");
+    //clears the input automatically after clicking the add button
+    todoInput.value = "";
     //make the list a child to the Div
     todoDiv.appendChild(newtodoLi);
     //add check mark button
