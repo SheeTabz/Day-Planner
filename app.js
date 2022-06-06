@@ -4,9 +4,10 @@ const todoButton = document.querySelector(".todo-Button");
 const todoList = document.querySelector(".do-list");
 // eventLsteners
 todoButton.addEventListener('click', addActivity);
-todoList.addEventisteners('click', delete)
+todoList.addEventListener('click', deleteCheck)
 
 //functions
+
 function addActivity(event) {
     //prevents the form from 
     event.preventDefault();
@@ -38,4 +39,19 @@ function addActivity(event) {
     todoDiv.appendChild(trashButton);
     //Append To the unordered List in the HTML 
     todoList.appendChild(todoDiv)
+}
+//The delete function
+function deleteCheck(e) {
+    const item = e.target; // The functionality will depend on what youve clicked
+    //DELETE TODO(div)i.e ;list and both butons
+    if (item.classList[0] === "trash-btn") {
+        const todo = item.parentElement;
+        todo.remove();
+    }
+    //CHECK MARK
+    if (item.classList[0] === "check-btn") {
+        const todo = item.parentElement;
+        todo.classList.toggle("completed")
+
+    }
 }
