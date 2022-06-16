@@ -2,9 +2,12 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector(".todo-Button");
 const todoList = document.querySelector(".do-list");
+const filterOption = document.querySelector(".filter-todo");
 // eventLsteners
 todoButton.addEventListener('click', addActivity);
-todoList.addEventListener('click', deleteCheck)
+todoList.addEventListener('click', deleteCheck);
+// filterOption.addEventListener('click', filterTodo)
+
 
 //functions
 
@@ -60,4 +63,14 @@ function deleteCheck(e) {
         todo.classList.toggle("completed")
 
     }
+}
+
+function filterTodo(e) {
+    const todos = todoList.childNodes
+        //Loop over all the node list that will be created on clicking the add button
+    todos.forEach(function(todo) {
+        switch (e.target.value) //value which are: all,completed, uncompleted
+    });
+
+
 }
